@@ -1,37 +1,40 @@
-# PARCIAL 2 AREP
+# TAREA DE AMAZON GATEWAY Y LAMBDA
 
-Diseñé, construya y despliegue los siguientes servicios en un microcontenedor docker desplegado en una instancei a EC2 de AWS. Cada estudiante debe seleccionar para desarrollar dos funciones matemáticas de acuerdo a los dos últimos dígitos de su cédula como se especifica en la lista. Todas las funciones reciben un solo parámetro de tipo "Double" y retornan una prámetro sde tipo "Double".
+1. Cree un servicio Web en Spark que convierta de grados farenheit en grados celcius. El servicio debe responder un JSON.
+2. Despliegue el servicio en una máquina de AWS EC2 y publíquelo.
+3. Cree una ruta en el API getway para acceder al servicio . Ojo ya la integración no es con función lambda.
+4. Cree un aplicación JS para usar el servicio. Depliegue la aplicación en S3. Asegúrese que esté disponible sobre internet.
+5. Pruebe la aplicación Web
+6. Entregue el código desarrollado en Github, un reporte de las pruebas, y u video con el experimento funcionando.
+7. Intente que el servicio en EC2 no esté accesible sobre internet, solo debe estar accesible por medio del API gateway.
 
 ## Explicación y Resumen del Proyecto
 
-Se realizará una aplicación, la cual será desplegada en AWS utilizando EC2 y Docker. Se seleccionaran dos funciones matemáticas, en mi caso Tan y Exp, las cuales recibiran un parámetro de tipo Double y retornarán un parámetro de este mismo tipo. Se implementarán los servicios para responder al método de solicitud HTTP GET.
+Se realizará una aplicación, la cual será desplegada en AWS utilizando EC2 y Docker. Se efectuara la operación matemática correspondiente para converitr los grados farenheit en grados celcius, el cuales recibirá un parámetro de tipo Double que serán los grados farenheit y retornarán un parámetro de este mismo tipo que seran los grados celcius. Se implementarán los servicios para responder al método de solicitud HTTP GET.
 
-El llamado debe ser de este tipo: `https://amazonxxx.x.xxx.x.xxx:{port}/tan?value=3.141592`.
+El llamado debe ser de este tipo: `https://amazonxxx.x.xxx.x.xxx:{port}/celsius?value=32`.
 
 El formato de salida y respuesta será un JSON con el siguiente formato: 
 
 {
 
- "operation": "cos",
+ "operation": "Grados farenheit a grados celcius",
 
- "input":  3.141592,
+ "input":  32,
 
- "output":  -0.999999
+ "output":  0
 
 }
 
 ## Imagenes de consola AWS corriendo
 
-[Video programa en ejecución](https://youtu.be/eLRfh9ZUSsE)
+[Video programa en ejecución]()
 
 ### Consola EC2
-![](img/img1.jpg)
+![]()
 
-### Operacion Tangente
-![](img/img2.jpg)
-
-### Operacion EXP
-![](img/img3.jpg)
+### Conversión
+![]()
 
 ## Empezando e Instalando
 
@@ -41,11 +44,11 @@ Entramos a la carpeta donde queremos guardar nuestro repositorio, en este caso D
 
 Clonamos el repositorio en la carpeta
 
-`$ git clone https://github.com/Nikolas2001-13/Parcial2-AREP`
+`$ git clone https://github.com/Nikolas2001-13/AREP-Taller7`
 
 Nos dirigimos a la carpeta que contiene el proyecto
 
-`$ cd Parcial2-AREP`
+`$ cd AREP-Taller7`
 
 Compilamos con maven
 
@@ -53,7 +56,7 @@ Compilamos con maven
 
 Correr proyecto
 
-`$ mvn exec:java -Dexec.mainClass="edu.eci.arep.parcial.SparkWebServer"`
+`$ mvn exec:java -Dexec.mainClass="edu.eci.arep.SparkWebServer"`
 
 Para ejecutar la aplicación
 
@@ -67,7 +70,7 @@ Conocimientos sobre AWS y EC2.
 
 ## Instancia en AWS
 
-[Amazon EC2](https://ec2-3-91-203-64.compute-1.amazonaws.com)
+[Amazon EC2]()
 
 ## Correr las Pruebas
 
